@@ -17,10 +17,10 @@ const ANGLES = [
 ]
 
 function getPct(r: QuizResult, id: number): number {
-  return (r as any)[`angle_${id}_pct`] || 0
+  return (r[`angle_${id}_pct`] as number) || 0
 }
 function getNote(r: QuizResult, id: number): string {
-  return (r as any)[`angle_${id}_note`] || ''
+  return (r[`angle_${id}_note`] as string) || ''
 }
 
 function avgPct(results: QuizResult[], id: number) {

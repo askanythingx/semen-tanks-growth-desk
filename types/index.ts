@@ -65,4 +65,5 @@ export interface QuizResult {
   angle_6_note: string
   angle_7_note: string
   angle_8_note: string
+  [key: string]: string | number
 }
