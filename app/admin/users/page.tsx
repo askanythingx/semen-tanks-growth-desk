@@ -27,6 +27,7 @@ export default function AdminUsersPage() {
   const [addError, setAddError] = useState('')
   const [addSuccess, setAddSuccess] = useState('')
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchUsers() }, [])
 
   async function fetchUsers() {
