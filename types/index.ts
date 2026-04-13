@@ -1,12 +1,23 @@
 export type TaskStatus = 'todo' | 'in_progress' | 'done' | 'blocked'
 export type TaskPriority = 'critical' | 'high' | 'medium' | 'quick_win'
 export type TaskAssignee = 'Dhruvi' | 'Deepak' | 'Janey' | 'Smit'
+export type SprintStatus = 'active' | 'completed' | 'paused'
+
+export interface Sprint {
+  id: string
+  name: string
+  description: string
+  status: SprintStatus
+  sprint_number: number
+  created_at: string
+}
 
 export interface Task {
   id: string
+  sprint_id: string
+  issue_number: number
   title: string
   description: string
-  issue_number: number
   priority: TaskPriority
   status: TaskStatus
   assignee: TaskAssignee
@@ -14,6 +25,7 @@ export interface Task {
   phase_label: string
   category: string
   is_mobile: boolean
+  not_required: boolean
   dev_effort: string
   fix_summary: string
   created_at: string
