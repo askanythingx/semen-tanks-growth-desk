@@ -16,6 +16,7 @@ export default function SprintsPage() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [loading, setLoading] = useState(true)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     async function load() {
       const [{ data: sp }, { data: tk }] = await Promise.all([

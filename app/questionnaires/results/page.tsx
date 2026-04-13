@@ -33,6 +33,7 @@ export default function QuizResultsPage() {
   const [loading, setLoading] = useState(true)
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     supabase.from('quiz_results').select('*').order('submitted_at', { ascending: false })
       .then(({ data }) => {
@@ -133,7 +134,7 @@ export default function QuizResultsPage() {
                                   style={{ width: `${Math.max(a.pct, 1)}%`, background: a.color }} />
                               </div>
                               {getNote(r, a.id) && (
-                                <div className="text-xs text-gray-400 mt-1 italic">"{getNote(r, a.id)}"</div>
+                                <div className="text-xs text-gray-400 mt-1 italic">&ldquo;{getNote(r, a.id)}&rdquo;</div>
                               )}
                             </div>
                           ))}
