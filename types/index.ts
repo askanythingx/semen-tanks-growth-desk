@@ -2,6 +2,19 @@ export type TaskStatus = 'todo' | 'in_progress' | 'done' | 'blocked'
 export type TaskPriority = 'critical' | 'high' | 'medium' | 'quick_win'
 export type TaskAssignee = 'Dhruvi' | 'Deepak' | 'Janey' | 'Smit'
 export type SprintStatus = 'active' | 'completed' | 'paused'
+export type UserRole = 'admin' | 'member'
+
+export interface UserProfile {
+  id: string
+  name: string
+  email: string
+  role: UserRole
+  can_see_dashboard: boolean
+  can_see_sprints: boolean
+  can_see_surveys: boolean
+  is_active: boolean
+  created_at: string
+}
 
 export interface Sprint {
   id: string
